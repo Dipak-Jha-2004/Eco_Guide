@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-eco-green: #10b981;
+  --color-eco-dark: #064e3b;
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --color-glass-border: rgba(255, 255, 255, 0.2);
+}
+
+:root {
+  --bg-gradient: radial-gradient(circle at 0% 0%, #064e3b 0%, transparent 50%),
+                 radial-gradient(circle at 100% 0%, #065f46 0%, transparent 50%),
+                 radial-gradient(circle at 100% 100%, #047857 0%, transparent 50%),
+                 radial-gradient(circle at 0% 100%, #10b981 0%, transparent 50%);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #022c22;
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes mesh-pulse {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.1) translate(-2%, 2%); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+.mesh-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.6;
+  filter: blur(80px);
+  animation: mesh-pulse 15s ease-in-out infinite;
+}
+
+.markdown-body p {
+  margin-bottom: 0.75rem;
+}
+
+.markdown-body ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-body strong {
+  color: #10b981;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "AI Eco-Friendly Shopping Assistant",
+  "description": "A full-stack sustainability-focused shopping chatbot powered by Gemini and Open Food Facts. Features eco-score calculation, strict domain restriction, and voice input.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["AI Chat", "Sustainability Scoring", "Voice Input"]
+}
